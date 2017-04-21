@@ -9,7 +9,7 @@ echo "Create latest version XcodeUnsigner.app"
 cp -R /Applications/Xcode.app /Applications/XcodeUnsigner.app
 
 echo "Backup Xcode's UserData "
-cp -R ~/Library/Developer/Xcode/UserData/ .
+cp -R ~/Library/Developer/Xcode/UserData/ ./UserData
 
 echo "Check whether there is a code signing certificate..."
 security find-identity -v -p appleID > appleID
@@ -30,6 +30,9 @@ rm -rf ~/Library/Application\ Support/Xcode
 echo "Copy backup data"
 if [ ! -d "~/Library/Application\ Support/Developer" ]; then
   mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/
+fi
+if [ ! -d "~/Library/Developer/Xcode/" ]; then
+  mkdir -p ~/Library/Developer/Xcode/
 fi
 cp -R ./UserData ~/Library/Developer/Xcode/
 cp -R ./Plug-ins ~/Library/Application\ Support/Developer/Shared/Xcode/
