@@ -21,6 +21,12 @@ This script is generated according to your computer Xcode version of the corresp
 * XToDo
 * XVim
 
+## Use
+
+1. Open Terminal.app
+2. chmod 777 updateXcodeForPlug-in.sh
+3. ./updateXcodeForPlug-in.sh
+
 ## Introduce
 
 [Xcode8如何使用插件](http://oriochan.com/xcode8plug.html)
